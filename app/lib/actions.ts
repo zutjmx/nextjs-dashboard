@@ -72,7 +72,6 @@ export async function updateInvoice(id: string, formData: FormData) {
 }
 
 export async function deleteInvoice(id: string) {  
-  //throw new Error('Failed to Delete Invoice'); //Para simular un error y probar el manejo de errores en el componente de error.tsx  
   try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');
